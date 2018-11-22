@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def create
-    @message = Message.create(id: params[:id], content: [:content], user_id: [:user_id])
+    @message = Message.create(message_params)
   end
 
   def show
@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:id, :content, :user_id)
+    params.require(:message).permit(:id, :content, :user_id, :chat_id)
   end
 
 end
