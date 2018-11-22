@@ -12,9 +12,18 @@ skip_before_action :set_user, only: [:destroy, :create, :index, :new]
     @user = User.new
   end
 
+  def create
+    @user = User.create(user_params)
+    render json: @user
+  end
+
   def show
     @user = User.find_by(id: params[:id])
     render json: @user
+  end
+
+  def current_user
+    User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   private
