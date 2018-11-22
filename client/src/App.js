@@ -8,15 +8,16 @@ import {connect} from 'react-redux'
 class App extends Component {
 //TASK ONE: How do you assign the correct/current user to a message when it's being created?
   componentDidMount() {
-    const currentUser = fetchUser
+    const currentUser = currentuser();
   }
 
   render() {
     return (
       <div className="App">
+      {currentUser}
         <ChatList chats={this.state.chats} />
-        <MessageList messages={this.props.messages} />
-        <MessageInput />
+        <MessageList messages={this.props.messages}/>
+        <MessageInput user={this.props.user}/>
       </div>
     );
   }
@@ -26,7 +27,7 @@ const mapStateToProps = () => {
   return {
     messages: this.state.messages,
     chats: this.state.chats,
-    authors: this.state.authors
+    user: currentUser
   }
 }
 export default App;
