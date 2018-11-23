@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Message = {date, content, author} => {
+const Message = ({date, content, author}) => {
   return(
     <div>
         <p className="message-author">{author}</p>: <span className="message-content">{content}</span>

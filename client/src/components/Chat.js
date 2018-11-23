@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Chat = {users} => {
+const Chat = ({users}) => {
   return (
     <div>
         <p className="chat-members">{users[0]} & {users[1]}</p>
@@ -8,5 +8,5 @@ const Chat = {users} => {
   )
 }
 
-export default Message
+export default Chat
 //When clicked, it should open the chat window on the right - Use React Router!

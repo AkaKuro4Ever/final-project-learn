@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import cuid from 'cuid';
 import {fetchMessages} from '../actions/messages';
 
+class MessageInput extends Component {
   state = {
     content: '',
     user: '',
@@ -16,12 +17,12 @@ import {fetchMessages} from '../actions/messages';
     this.setState(state);
   }
 
-  onHandleSubmit = event => {
-    event.preventDefault();
-    this.state
-  }
+  // onHandleSubmit = event => {
+  //   event.preventDefault();
+  //   this.state
+  // }
 
-class MessageInput extends Component {
+
   render() {
     return(
       <input id="content" name="content" value={this.state.content}></input>
@@ -29,4 +30,4 @@ class MessageInput extends Component {
   }
 }
 
-export default connect(mapStateToProps, {fetchMessages})(MessageInput)
+export default connect(null, {fetchMessages})(MessageInput)

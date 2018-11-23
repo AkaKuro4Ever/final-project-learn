@@ -1,5 +1,6 @@
 import React from 'react';
 import message from './Message'
+import Chat from './Chat'
 
 const ChatList = props => {
   let allChats = () => {
