@@ -3,7 +3,7 @@ import cuid from 'cuid';
 
 const rootReducer = combineReducers({
   users: usersReducer,
-  // messages: messagesReducer,
+  messages: messagesReducer,
   // chats: chatsReducer
 });
 
@@ -12,11 +12,14 @@ const rootReducer = combineReducers({
 export default rootReducer;
 
 
-// function messagesReducer(state = [], action) {
-//   switch action.type {
-//     case
-//   }
-// }
+function messagesReducer(state = [], action) {
+  switch (action.type) {
+    case 'ADD_MESSAGE':
+      return [...state, action.message]
+    default:
+      return state
+  }
+}
 
 function usersReducer(state = {loading: false, user: null}, action) {
   switch (action.type) {

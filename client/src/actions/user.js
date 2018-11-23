@@ -1,10 +1,9 @@
 function currentUser() {
   return (dispatch) => {
     dispatch({type: 'FIND_CURRENT_USER'});
-    debugger
     return fetch('/currentuser')
     .then(response => {return response.json()})
-    .then(user => dispatch({type: "FETCH_USER", user: {username: user.username, id: user.id}})
+    .then(user => dispatch({type: "FETCH_USER", user: user})
   )}
 }
 

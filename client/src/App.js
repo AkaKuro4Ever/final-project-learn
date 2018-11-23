@@ -21,23 +21,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <MessageList messages={this.props.messages}/>
+        <MessageInput user={this.props.user}/>
       </div>
     );
   }
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = state => {
   return {
-
-    user: currentUser
+    user: state.users.user,
+    messages: state.messages
   }
 }
+
 export default connect(mapStateToProps, {currentUser})(App);
 
 /*<ChatList chats={this.state.chats} />
-<MessageList messages={this.props.messages}/>
-<MessageInput user={this.props.user}/>
+
+
 messages: this.state.messages,
 chats: this.state.chats,
 */
