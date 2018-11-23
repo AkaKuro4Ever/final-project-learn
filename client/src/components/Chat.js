@@ -3,7 +3,7 @@ import React from 'react'
 const Chat = ({users}) => {
   return (
     <div>
-        <p className="chat-members">{users[0]} & {users[1]}</p>
+        <p className="chat-members">{users[0].username} & {users[1].username}</p>
     </div>
   )
 }

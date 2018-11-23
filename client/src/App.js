@@ -7,20 +7,20 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
+import {allChats} from './actions/chat'
 
 class App extends Component {
 //TASK ONE: How do you assign the correct/current user to a message when it's being created?
   componentDidMount() {
-    // fetch('/users/1')
-    // .then(response => {return response.json()})
-    // .then(answer => console.log(answer))
     const user = this.props.currentUser();
-    console.log(user)
+    const chats = this.props.allChats();
+    //Still need to get sessions in place here
   }
 
   render() {
     return (
       <div className="App">
+        <ChatList chats={this.props.chats} />
         <MessageList messages={this.props.messages}/>
         <MessageInput user={this.props.user}/>
       </div>
@@ -29,17 +29,16 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  debugger
   return {
     user: state.users.user,
-    messages: state.messages
+    messages: state.messages,
+    chats: state.chats.chats
   }
 }
 
-export default connect(mapStateToProps, {currentUser})(App);
+export default connect(mapStateToProps, {currentUser, allChats})(App);
 
-/*<ChatList chats={this.state.chats} />
+/*/>
 
-
-messages: this.state.messages,
-chats: this.state.chats,
 */

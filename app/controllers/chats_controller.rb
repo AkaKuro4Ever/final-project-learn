@@ -1,4 +1,10 @@
 class ChatsController < ApplicationController
+
+  def index
+    @chats = Chat.all
+    render json: @chats
+  end
+
   def create
     @chat = Chat.create(chat_params)
   end

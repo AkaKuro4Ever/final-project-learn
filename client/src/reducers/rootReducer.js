@@ -4,7 +4,7 @@ import cuid from 'cuid';
 const rootReducer = combineReducers({
   users: usersReducer,
   messages: messagesReducer,
-  // chats: chatsReducer
+  chats: chatsReducer
 });
 
 //Through combineReducer, we're telling Redux to produce a reducer which will return a state that has both a key of books with a value equal to the return value of the booksReducer() and a key of authors with a value equal to the return value of the authorsReducer()
@@ -27,6 +27,17 @@ function usersReducer(state = {loading: false, user: null}, action) {
       return {loading: true, user: null}
     case 'FETCH_USER':
       return {loading: false, user: action.user}
+    default:
+      return state
+  }
+}
+
+function chatsReducer(state = {loading: false, chats: []}, action) {
+  switch (action.type) {
+    case 'LOADING_CHATS':
+      return {loading: true, chats: []}
+    case 'ALL_CHATS':
+      return {loading: false, chats: action.chats}
     default:
       return state
   }

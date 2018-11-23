@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :chats, only: [:create, :show]
+  resources :chats, only: [:index, :create, :show]
   resources :messages, only: [:create, :show]
   resources :users, only: [:index, :new, :create, :show]
   get '/currentuser' => 'users#current'
