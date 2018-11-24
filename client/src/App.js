@@ -7,6 +7,7 @@ import {currentUser} from './actions/user'
 import {fetchChat} from './actions/chat'
 import MessageInput from './containers/MessageInput'
 import MessageList from './components/MessageList'
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
@@ -18,6 +19,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/signup" component={Signup}/>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/logout" component={Logout}/>
+        </Switch>
+      </Router>
         <MessageList messages={this.props.chat.messages} newMessages={this.props.messages}/>
         <MessageInput user={this.props.user}/>
       </div>
