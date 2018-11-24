@@ -4,8 +4,8 @@ import Chat from './Chat'
 
 const ChatList = props => {
   let allChats = () => {
-    props.chats.map(chat =>
-      <Chat key={chat.id} users={chat.users}/>
+    return props.chats.map(chat =>
+      <Chat key={chat.id} users={chat.users} id={chat.id}/>
     )
   }
 

@@ -13,13 +13,12 @@ class App extends Component {
     const chats = this.props.allChats();
     //Still need to get sessions in place here
   }
-
+  
   render() {
     return (
       <div className="App">
         <ChatList chats={this.props.chats} />
-        <MessageList messages={this.props.messages}/>
-        <MessageInput user={this.props.user}/>
+
       </div>
     );
   }
@@ -37,5 +36,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {currentUser, allChats})(App);
 
 /*/>
-
+<MessageList messages={this.props.messages}/>
+<MessageInput user={this.props.user}/>
 */
