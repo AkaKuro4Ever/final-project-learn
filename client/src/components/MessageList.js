@@ -11,8 +11,9 @@ class MessageList extends Component {
     }
 
     let newMessages = () => {
+      let count = this.props.newMessages.length
       return this.props.newMessages.map(message =>
-        <Message key={message.id} content={message.content} author={message.user}/>
+        <Message key={count++} content={message.content} author={message.user}/>
       )
     }
 
