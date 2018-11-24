@@ -6,7 +6,7 @@ import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
 import {allChats} from './actions/chat'
 import MessageInput from './containers/MessageInput'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import Chat from './components/Chat'
 
@@ -17,16 +17,35 @@ class App extends Component {
     const chats = this.props.allChats();
     //Still need to get sessions in place here
   }
-
   render() {
+    const About = () => <h1>This is my about component!</h1>;
+
+    const Navbar = props => {
+      let allChats = () => {
+        return props.chats.map(({id, users}) =>
+          <div key={id}><NavLink to={`/chat/${id}`} className="chat-members">{users[0].username} & {users[1].username}</NavLink></div>
+        )
+      }
+      return (
+        <div>
+            {allChats()}
+          </div>
+      )
+    }
+
     return (
       <div className="App">
-        <Navbar chats={this.props.chats}/>
-        <Router>
-          <Switch>
-            <Route path='/chats/:id' component={Chat}/>
-          </Switch>
-        </Router>
+      <Router>
+        <React.Fragment>
+          <Navbar chats={this.props.chats}/>
+            <Switch>
+              <Route exact path="/chat/1" component={Chat} />
+            </Switch>
+            <Route exact path="/chat/1" render={props => <MessageInput user={props.user}/>}/>
+        </React.Fragment>
+      </Router>
+
+
       </div>
     );
   }
