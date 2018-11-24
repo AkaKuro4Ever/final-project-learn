@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MessageList from './components/MessageList'
-import MessageInput from './containers/MessageInput'
 import {connect} from 'react-redux'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
 import {allChats} from './actions/chat'
