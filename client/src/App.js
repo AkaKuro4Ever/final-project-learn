@@ -44,7 +44,7 @@ class App extends Component {
             <Route exact path="/chat/1" render={props => <MessageInput user={props.user}/>}/>
         </React.Fragment>
       </Router>
-
+"Hi!"
 
       </div>
     );
