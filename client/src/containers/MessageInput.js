@@ -8,7 +8,7 @@ class MessageInput extends Component {
     content: '',
     user: null,
   }
-
+  
   onHandleChange = event => {
     let field = event.target.id;
     let state = this.state;

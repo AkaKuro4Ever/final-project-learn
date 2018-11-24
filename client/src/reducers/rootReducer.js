@@ -34,10 +34,12 @@ function usersReducer(state = {loading: false, user: null}, action) {
 
 function chatsReducer(state = {loading: false, chats: []}, action) {
   switch (action.type) {
-    case 'LOADING_CHATS':
+    case 'LOADING':
       return {loading: true, chats: []}
     case 'ALL_CHATS':
       return {loading: false, chats: action.chats}
+    case 'FETCH_CHAT':
+      return {loading: false, chat: action.chat}
     default:
       return state
   }

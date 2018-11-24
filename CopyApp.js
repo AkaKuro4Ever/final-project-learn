@@ -5,10 +5,8 @@ import {connect} from 'react-redux'
 import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
 import {allChats} from './actions/chat'
+import MessageList from './components/MessageList'
 import MessageInput from './containers/MessageInput'
-import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
-import Chat from './components/Chat'
 
 class App extends Component {
 //TASK ONE: How do you assign the correct/current user to a message when it's being created?
@@ -21,18 +19,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar chats={this.props.chats}/>
-        <Router>
-          <Switch>
-            <Route path='/chats/:id' component={Chat}/>
-          </Switch>
-        </Router>
+        <ChatList chats={this.props.chats} />
+        <MessageList messages={this.props.messages}/>
+        <MessageInput user={this.props.user}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
+  debugger
   return {
     user: state.users.user,
     messages: state.messages,
