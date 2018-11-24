@@ -8,6 +8,7 @@ const Chat = ({id, users}) => {
     <div>
     <Router>
         <NavLink to={`/chat/${id}`} className="chat-members">{users[0].username} & {users[1].username}</NavLink>
+
     </Router>
     </div>
   )
@@ -36,7 +37,7 @@ export default Chat
 // />
 /*
 <Router>
-  <Route exact path={`/chat/:id`} render={props => <MessageList {...props} messages={props.messages} />}/>
-  <Route exact path='/chat/:id' render={props => <MessageInput {...props} user={props.user} />}/>
+<Route exact path={`/chat/:id`} render={props => <MessageList {...props} messages={props.messages} />}/>
+<Route exact path='/chat/:id' render={props => <MessageInput {...props} user={props.user} />}/>
 </Router>
 */

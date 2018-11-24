@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
 import {allChats} from './actions/chat'
+import MessageList from './components/MessageList'
+import MessageInput from './containers/MessageInput'
 
 class App extends Component {
 //TASK ONE: How do you assign the correct/current user to a message when it's being created?
@@ -13,12 +15,13 @@ class App extends Component {
     const chats = this.props.allChats();
     //Still need to get sessions in place here
   }
-  
+
   render() {
     return (
       <div className="App">
         <ChatList chats={this.props.chats} />
-
+        <MessageList messages={this.props.messages}/>
+        <MessageInput user={this.props.user}/>
       </div>
     );
   }
@@ -36,6 +39,5 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {currentUser, allChats})(App);
 
 /*/>
-<MessageList messages={this.props.messages}/>
-<MessageInput user={this.props.user}/>
+
 */
