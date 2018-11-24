@@ -4,23 +4,21 @@ import './App.css';
 import {connect} from 'react-redux'
 import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
-import {allChats} from './actions/chat'
-import MessageList from './components/MessageList'
+import {fetchChat} from './actions/chat'
 import MessageInput from './containers/MessageInput'
+import MessageList from './components/MessageList'
 
 class App extends Component {
-//TASK ONE: How do you assign the correct/current user to a message when it's being created?
   componentDidMount() {
-    const user = this.props.currentUser();
-    const chats = this.props.allChats();
+    this.props.fetchChat();
+    this.props.currentUser();
     //Still need to get sessions in place here
   }
 
   render() {
     return (
       <div className="App">
-        <ChatList chats={this.props.chats} />
-        <MessageList messages={this.props.messages}/>
+        <MessageList messages={this.props.chat.messages}/>
         <MessageInput user={this.props.user}/>
       </div>
     );
@@ -28,15 +26,14 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  debugger
   return {
     user: state.users.user,
     messages: state.messages,
-    chats: state.chats.chats
+    chat: state.chats.chat
   }
 }
 
-export default connect(mapStateToProps, {currentUser, allChats})(App);
+export default connect(mapStateToProps, {currentUser, fetchChat})(App);
 
 /*/>
 
