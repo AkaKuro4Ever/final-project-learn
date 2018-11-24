@@ -4,8 +4,14 @@ import Message from './Message'
 class MessageList extends Component {
 
   render() {
-    let allMessages = () => {
+    let dbMessages = () => {
       return this.props.messages.map(message =>
+        <Message key={message.id} content={message.content} author={message.user}/>
+      )
+    }
+
+    let newMessages = () => {
+      return this.props.newMessages.map(message =>
         <Message key={message.id} content={message.content} author={message.user}/>
       )
     }
@@ -13,7 +19,8 @@ class MessageList extends Component {
     return (
       <div className="container">
         <div className="message">
-          {allMessages()}
+          {dbMessages()}
+          {newMessages()}
         </div>
       </div>
     )

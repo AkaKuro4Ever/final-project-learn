@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MessageList messages={this.props.chat.messages}/>
+        <MessageList messages={this.props.chat.messages} newMessages={this.props.messages}/>
         <MessageInput user={this.props.user}/>
       </div>
     );
