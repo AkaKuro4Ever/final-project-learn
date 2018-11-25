@@ -8,13 +8,14 @@ import {fetchChat} from './actions/chat'
 import MessageInput from './containers/MessageInput'
 import MessageList from './components/MessageList'
 import Signup from './components/Signup'
+import Login from './components/Login'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchChat();
-    this.props.currentUser();
+    // this.props.currentUser();
     //Still need to get sessions in place here
   }
 
@@ -25,6 +26,7 @@ class App extends Component {
         <React.Fragment>
           <Navbar />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
         </React.Fragment>
       </Router>
         <MessageList messages={this.props.chat.messages} newMessages={this.props.messages}/>
