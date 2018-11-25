@@ -13,6 +13,7 @@ skip_before_action :set_user, only: [:destroy, :create, :index, :new]
   end
 
   def create
+    binding.pry
     @user = User.create(user_params)
     render json: @user
   end
@@ -26,6 +27,11 @@ skip_before_action :set_user, only: [:destroy, :create, :index, :new]
     render json: @user
   end
 
+  def login
+    @user = User.find_by(username: params[:username]) if params[:username]
+    render json: @user
+  end
+
   private
 
   def set_user
@@ -33,6 +39,6 @@ skip_before_action :set_user, only: [:destroy, :create, :index, :new]
   end
 
   def user_params
-    params.require(:user).permit(:id, :email, :username, :password, :password_confirmation)
+    params.require(:user).permit(:id, :email, :chat_id, :username, :password, :password_confirmation)
   end
 end

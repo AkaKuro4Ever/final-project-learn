@@ -7,6 +7,21 @@ function currentUser() {
   )}
 }
 
+// function findUser(user) {
+//   return (dispatch) => {
+//     dispatch({type: 'FIND_CURRENT_USER'});
+//     return fetch('/login', {
+//       method: 'get',
+//       headers: {
+//         Accept: 'application/json',
+//         'Content-Type': 'application/json',
+//       }, body: JSON.stringify(user)
+//     })
+//     .then(response => {return response.json()})
+//     .then(user => dispatch({type: "FETCH_USER", user: user})
+//   }
+// }
+
 export {currentUser}
 // export default function addUser() {
 // }
