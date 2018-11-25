@@ -27,7 +27,6 @@ skip_before_action :set_user, only: [:destroy, :create, :index, :new]
   end
 
   def login
-    binding.pry
     @user = User.find_by(username: user_params[:username])
     render json: @user
   end
