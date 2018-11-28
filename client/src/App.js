@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux'
-import ChatList from './components/ChatList'
 import {currentUser} from './actions/user'
 import {fetchChat} from './actions/chat'
 import MessageInput from './containers/MessageInput'
@@ -10,7 +8,7 @@ import MessageList from './components/MessageList'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
