@@ -11,7 +11,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
-
+//This version is working, but has a lot of unecessary components that are in different/wrong places
 class App extends Component {
   componentDidMount() {
     this.props.fetchChat();
