@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Message from './Message'
+import '../Styling.css'
 
 class MessageList extends Component {
 
@@ -18,8 +19,8 @@ class MessageList extends Component {
     }
 
     return (
-      <div className="container">
-        <div className="message">
+      <div className="messages-container">
+        <div className="message-container">
           {dbMessages()}
           {newMessages()}
         </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-/* Add basic styling for NavLinks */
 const link = {
   width: '100px',
   padding: '12px',
@@ -9,6 +8,33 @@ const link = {
   background: 'blue',
   textDecoration: 'none',
   color: 'white',
+  top: 0,
+  left: 0,
+  position: 'fixed',
+}
+
+const link_2 = {
+  width: '100px',
+  padding: '12px',
+  margin: '0 6px 6px',
+  background: 'blue',
+  textDecoration: 'none',
+  color: 'white',
+  top: 100,
+  left: 0,
+  position: 'fixed',
+}
+
+const link_3 = {
+  width: '100px',
+  padding: '12px',
+  margin: '0 6px 6px',
+  background: 'blue',
+  textDecoration: 'none',
+  color: 'white',
+  top: 220,
+  left: 0,
+  position: 'fixed',
 }
 
 /* add the navbar component */
@@ -25,7 +51,7 @@ const Navbar = () =>
     <NavLink
       to="/signup"
       exact
-      style={link}
+      style={link_2}
       activeStyle={{
         background: 'darkblue'
       }}
@@ -33,7 +59,7 @@ const Navbar = () =>
     <NavLink
       to="/login"
       exact
-      style={link}
+      style={link_3}
       activeStyle={{
         background: 'darkblue'
       }}

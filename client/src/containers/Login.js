@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {findUser} from '../actions/user'
 import {connect} from 'react-redux';
+import '../Styling.css'
 
 class Login extends Component {
 
@@ -42,9 +43,9 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <div className="signup-form-body">
+      <h1>Login</h1>
+        <div className="login-form-body">
         <form onSubmit={this.onHandleSubmit} onKeyPress={this.handleKeyPress}>
-          <h1>Login</h1>
           <input id="username" name="username" placeholder="Username" value={this.state.user.username} onChange={this.onHandleChange} />
           <button>Submit</button>
         </form>

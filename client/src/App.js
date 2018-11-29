@@ -5,16 +5,15 @@ import {currentUser} from './actions/user'
 import {fetchChat} from './actions/chat'
 import MessageInput from './containers/MessageInput'
 import MessageList from './components/MessageList'
-import Signup from './components/Signup'
-import Login from './components/Login'
+import Signup from './containers/Signup'
+import Login from './containers/Login'
 import Navbar from './components/Navbar'
+import Welcome from './components/Welcome'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchChat();
-    // this.props.currentUser();
-    //Still need to get sessions in place here
   }
 
   render() {
@@ -23,6 +22,7 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <Navbar />
+          <Route exact path="/" component={Welcome} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
         </React.Fragment>
@@ -43,8 +43,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {currentUser, fetchChat})(App);
-
-/*/>
-
-<Route exact path="/logout" component={Logout}/>
-*/

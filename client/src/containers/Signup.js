@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import '../Styling.css'
+
 class Signup extends Component {
   state = {
     user: {
@@ -31,7 +33,7 @@ class Signup extends Component {
         chat_id: 1
       }
     })
-      document.getElementById("sign-up-response").innerHTML = `Signed up, ${user.user.username}!`
+      document.getElementById("signup-response").innerHTML = `Signed up, ${user.user.username}!`
     }
 
   handleKeyPress = (event) => {
@@ -50,7 +52,7 @@ class Signup extends Component {
             <button>Submit</button>
           </form>
         </div>
-        <div id="sign-up-response">
+        <div id="signup-response">
         </div>
       </div>
     )

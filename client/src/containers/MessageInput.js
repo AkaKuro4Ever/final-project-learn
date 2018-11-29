@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {addMessage} from '../actions/messages';
 import {fetchChat} from '../actions/chat'
+import '../Styling.css'
 
 class MessageInput extends Component {
   state = {
