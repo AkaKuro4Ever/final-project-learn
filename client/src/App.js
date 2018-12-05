@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux'
-import {currentUser} from './actions/user'
 import {fetchChat} from './actions/chat'
 import MessageInput from './containers/MessageInput'
 import MessageList from './components/MessageList'
@@ -42,4 +41,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {currentUser, fetchChat})(App);
+export default connect(mapStateToProps, {fetchChat})(App);
