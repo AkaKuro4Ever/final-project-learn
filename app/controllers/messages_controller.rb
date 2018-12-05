@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
+    render json: @message
   end
 
   def show

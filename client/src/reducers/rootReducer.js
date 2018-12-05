@@ -13,6 +13,8 @@ export default rootReducer;
 
 function messagesReducer(state = [], action) {
   switch (action.type) {
+    case 'ADDING_MESSAGE':
+      return state
     case 'ADD_MESSAGE':
       return [...state, action.message]
     default:

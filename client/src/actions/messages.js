@@ -17,9 +17,24 @@
 //
 // export {fetchCats}
 
-
-export const addMessage = message => {
-  return {
-    type: 'ADD_MESSAGE', message
-  }
+function createMessage(message) {
+  return (dispatch) => {
+    dispatch({type: 'ADDING_MESSAGE'});
+    return fetch('/messages', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }, body: JSON.stringify(message)
+    })
+    .then(response =>  response.json())
+    .then(message => dispatch({type: "ADD_MESSAGE", message: message})
+  )}
 }
+
+export default createMessage
+//
+// export const addMessage = message => {
+//   return {
+//     type: 'ADD_MESSAGE', message
+//   }

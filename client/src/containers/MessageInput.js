@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addMessage} from '../actions/messages';
+import createMessage from '../actions/messages';
 import {fetchChat} from '../actions/chat'
 import '../Styling.css'
 
@@ -29,14 +29,7 @@ class MessageInput extends Component {
     message.user_id = this.props.user.id
     message.user = this.props.user
     this.setState({message}, function () {
-      fetch('/messages', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        }, body: JSON.stringify(message)
-      }).catch( err => console.error('Caught error: ', err))
-      this.props.addMessage(message)
+      this.props.createMessage(message)
       this.setState({
         message: {
           content: '',
@@ -73,7 +66,7 @@ class MessageInput extends Component {
 //   addMessage: message => dispatch({ type: "ADD_MESSAGE", message})
 // })
 
-export default connect(null, {addMessage, fetchChat})(MessageInput)
+export default connect(null, {fetchChat, createMessage})(MessageInput)
 
 /*
 onHandleSubmit = event => {
