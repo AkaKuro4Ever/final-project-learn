@@ -28,18 +28,15 @@ class MessageInput extends Component {
     let message = {...this.state.message}
     message.user_id = this.props.user.id
     message.user = this.props.user
-    this.setState({message}, function () {
-      this.props.createMessage(message)
-      this.setState({
-        message: {
-          content: '',
-          user_id: null,
-          chat_id: 1,
-          user: null,
-        }
-      })
-      console.log(this.state.message.content)
-    });
+    this.props.createMessage(message)
+    this.setState({
+      message: {
+        content: '',
+        user_id: null,
+        chat_id: 1,
+        user: null,
+      }
+    })
   };
 
 
