@@ -7,13 +7,13 @@ class MessageList extends Component {
   render() {
     let dbMessages = () => {
       return this.props.messages.map(message =>
-        <Message key={message.id} content={message.content} author={message.user}/>
+        <Message key={message.id} content={message.content} author={message.user} id={message.id}/>
       )
     }
 
     let newMessages = () => {
       return this.props.newMessages.map(message =>
-        <Message key={message.id} content={message.content} author={message.user}/>
+        <Message key={message.id} content={message.content} author={message.user} id={message.id}/>
       )
     }
 
