@@ -13,7 +13,9 @@ class MessageInput extends Component {
       user: null,
     }
   }
-
+/*
+Constructor methods are actually passed before the store is passed in!! Which is why the props doesn't have store values
+*/
   onHandleChange = event => {
     let field = event.target.id;
     let state = this.state;

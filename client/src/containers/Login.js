@@ -33,7 +33,9 @@ class Login extends Component {
     document.getElementById("login-response").innerHTML =
     `You're logged in, ${user.user.username}!`
   }
-
+/*
+Warning that this does not say whether it really worked - like with signup
+*/
   handleKeyPress = (event) => {
     if(event.key === 'Enter'){
       this.onHandleSubmit(event)
