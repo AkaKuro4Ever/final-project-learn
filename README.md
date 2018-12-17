@@ -8,4 +8,8 @@ Be sure to sign-up and sign in. Just type in any name you'd like, and then type 
 
 Link to video demo/walkthrough: https://youtu.be/RqjiMlEZ54g
 
+Blogpost about the Project:
+
+https://akakuro4ever.github.io/the_final_project
+
 * Ruby version: 2.3.3, dependent on rack, rails, sqlite3, react-redux
