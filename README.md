@@ -6,6 +6,8 @@ To get started, clone the repo, and then run ```rake start```.
 
 Be sure to sign-up and sign in. Just type in any name you'd like, and then type it again in the login text field. It's currently not designed to handle passwords or a lack of user before typing in a message (but no worries, the developer is well aware). Have fun and become as many different users as you'd like!
 
+Big warning - since there is no WebSockets in this, the update of multiple user messaging is not in real time. You need to refresh constantly. Apologies for this!!!
+
 Link to video demo/walkthrough: https://youtu.be/RqjiMlEZ54g
 
 Blogpost about the Project:
